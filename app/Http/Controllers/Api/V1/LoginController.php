@@ -31,7 +31,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
 
-            $token = $request->user()->createToken($request->token_name);
+            $token = $request->user()->createToken('API Token');
 
             return response()->json([
                 'message' => 'User logged in successfully.',
